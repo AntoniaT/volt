@@ -1,6 +1,14 @@
+/* COLORS USED:
+
+GREEN: #c4d600;
+GRAY:
+BLUE:
+ORANGE:
+*/
 *{
     margin: 0;
     box-sizing: border-box;
+    font-family: "Helvetica", sans-serif;
 }
 .voltLogo{
     width: 100px;
@@ -21,6 +29,12 @@ li{
     font-size: 1.5em;
     margin: 1em;
 }
+#progressbar{
+    margin: 2em;
+    color: #c4d600;
+    font-size: 1.5em;
+    text-align: center;
+}
 #mainForm fieldset{
     margin-top: 2em;
     background: white;
@@ -31,6 +45,8 @@ li{
     width: 60vw;
     margin: auto;
     display: block;
+/*stacking fieldsets above each other*/
+	position: relative;
 }
 .container{
     margin: auto;
@@ -43,6 +59,6 @@ li{
     grid-column: 1 / 2;
 }
 .rightSideForm{
-    background-color: greenyellow;
+    background-color: #c4d600;
     grid-column: 2 / 3;
 }
