@@ -1,0 +1,48 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+.voltLogo{
+    width: 100px;
+    height: auto;
+}
+nav{
+    background-color: black;
+    display: inline-block;
+    width: 100vw;
+}
+li{
+    list-style: none;
+    display: inline-block;
+}
+.navBar li {
+    display: inline-block;
+    color: white;
+    font-size: 1.5em;
+    margin: 1em;
+}
+#mainForm fieldset{
+    margin-top: 2em;
+    background: white;
+	border: 0 none;
+	border-radius: 3px;
+	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+    padding: 20px 30px;
+    width: 60vw;
+    margin: auto;
+    display: block;
+}
+.container{
+    margin: auto;
+
+    padding: 1em;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+.leftSideForm{
+    grid-column: 1 / 2;
+}
+.rightSideForm{
+    background-color: greenyellow;
+    grid-column: 2 / 3;
+}
