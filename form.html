@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <title>Volt Form</title>
 </head>
 <body>
@@ -26,89 +27,171 @@
     <form id="mainForm">
       <!-- progressbar -->
       <ul id="progressbar">
-        <li class="active">Product</li>
-        <li>Your Information</li>
-        <li>Payment</li>
+        <li>Product</li>
+        <li data-field="progress" class="">Your Information</li>
+        <li data-field="progress1" class="">Payment</li>
       </ul>
 
       <!-- fieldset 1 : PRODUCT-->
-        <fieldset>
+        <fieldset data-field="fieldset1" class="">
             <div class="container">
             <!--Left side of the form-->
             <label class="leftSideForm">
              <h2 class="">Choose your product</h2>
-             <h3 class="">To use our recharging service you need to have a portable Volt Charger. You can bring your own or we provide you with one for a deposit fee, which is refundable.</h3>
-              <label><strong>Volt Recharging Service at Roskilde Festival</strong><br>Swap your Volt Charger every day for a fully charged one.
+             <h3 class="">We offer a daily recharging and swapping service at Roskilde Festival for the portable Volt Charger.</h3>
+              
+             <div id="productContainer"><label><strong>Volt Recharging Service at Roskilde Festival</strong><br>Swap your Volt Charger every day for a fully charged one.
                 </label>
-                <img src="" alt="">
-                <input type="number" id="" name="" min="1"><br>
+                <img class="productImg" src="images/Icon-volt.png" alt="">
+                <input class="pcsProduct" type="number" name="" min="1"><br>
+                <input class="priceProduct" type="number" name="" placeholder="179 DKK"><br>
 
-              <label><strong> Volt Charger Deposit</strong><br>The deposit is refundable at anytime during the event
-                </label>
-                <img src="" alt="">
-                <input type="number" id="" name="" min="1"><br>
+             </div>
 
-             <label>Delivery Option:</label><br>
-                <input type="button" name="pickup" value="Pick up at the Festival or at Volt in CPH"/><br>
-                <input type="button" name="shipped" value="Shipped to home"/><br>
-                <input type="button" name="own" value="Bringing own Volt Charger" /><br>
+    
+             <label>Choose your Option:</label><br>
+                <input class="deliveryBtn" data-field="deliveryChoice1" type="button" name="pickup" value="Pick up at the Festival or at Volt in CPH"/><br>
+        
+                <!--Product that is hidden first-->
 
-                <input type="button" name="continue" class="next action-button" value="Continue" />
+                  <div class="secProductContainer hidden" data-field="secondProduct">
+                   <label><strong> Volt Charger Deposit</strong><br>The deposit is refundable at anytime during the event
+                   </label>
+                   <img class="productImg" src="images/Volt-Charger.png" alt="volt charger">
+                   <input class="pcsProduct" type="number" name="" min="1"><br>
+                  </div>
+                
+                <input class="deliveryBtn" data-field="deliveryChoice2" type="button" name="shipped" value="Shipped to home"/><br>
+       
+                <!--again the product that is hidden first. I know this is not very elegant but is a quick fix for now to make it work-->
+                <div class="secProductContainer hidden" data-field="secondProduct2">
+                        <label><strong> Volt Charger Deposit</strong><br>The deposit is refundable at anytime during the event
+                        </label>
+                        <img class="productImg" src="images/Volt-Charger.png" alt="volt charger">
+                        <input class="pcsProduct" type="number" name="" min="1"><br>
+                       </div>
+
+                <input class="deliveryBtn" type="button" name="own" value="Bringing own Volt Charger" /><br>
+
+                <input type="button" name="continue" data-field="continueBtn1" class="continueActionBtn" value="Continue" />
             </label>
 
             <!--Right side of the form-->
             <label class="rightSideForm">
-             <h2>Stay charged.<br>Be connected.</h2>
+             <h2 class="rightHeader">Stay charged.<br>Be connected.</h2>
+             <img src="images/right-side-form-image-s.jpg" alt="photo of festival">
             </label>
         </div>
             </fieldset>
 
       <!-- fieldset 2 : SIGN UP-->
 
-        <fieldset>
+        <fieldset data-field="fieldset2">
             <div class="container">
                 <label class="leftSideForm">
                         <h2 class="">Sign up for Volt</h2>
                         <h3 class="">We need your information to provide you with a Volt charger and a number at the festival.</h3>
-                        <input type="button" name="facebook" class="fb action-button" value="Continue with Facebook" />
-                        <h4>OR</h4>
+                        <input type="button" name="facebook" id="facebookBtn" value="Continue with Facebook" />
+                        <h4><span class="greenLine">OR</span></h4>
                         <h3>Sign up with your Email address</h3>
 
                 <!-- BASIC INFORMATION PART-->
                         <label>
-                            Your Basic Information
+                            <span class="circles">1</span>Your Basic Information
                         </label><br>
-                        <label>First Name</label>
-                        <input type="text" name="fname" placeholder="Jonas"/>
-                        <label>Last Name</label>
-                        <input type="text" name="lname" placeholder="Holbech"/><br>
-                        <label>Email</label>
-                        <input type="text" name="email" placeholder="jonas@holbech.dk"/><br>
-                        <label>Country</label>
-                        <input type="text" name="country" placeholder="Denmark"/><br>
-                        <label>Phone Number</label>
-                        <input type="number" name="mobilenumber" placeholder="Phone number"/><br>
-                        <label>Password</label>
-                        <input type="password" name="password" placeholder="Password"/><br><br>
+                        <label>First Name</label><br>
+                        <input class="signUpInput" type="text" name="fname" placeholder="Jonas"/>
+                        <label>Last Name</label><br>
+                        <input class="signUpInput" type="text" name="lname" placeholder="Holbech"/><br>
+                        <label>Email</label><br>
+                        <input class="signUpInput" type="text" name="email" placeholder="jonas@holbech.dk"/><br>
+                        <label>Country</label><br>
+                        <input class="signUpInput" type="text" name="country" placeholder="Denmark"/><br>
+                        <label>Phone Number</label><br>
+                        <input class="signUpInput" type="number" name="mobilenumber" placeholder="Phone number"/><br>
+                        <label>Password</label><br>
+                        <input class="signUpInput" type="password" name="password" placeholder="Password"/><br><br>
 
                 <!-- PURCHASE MODE PART-->
                         <label>
-                                Your Purchase mode
-                            </label>
-                            <h3 class="">If you come as a group, you can benefit from our group-only offers: buy five and get 1 for free or order your group bracelet</h3>
-                            <input type="radio" id=""
-                            name="" value="">
-                           <label for="contactChoice1">Buy for Yourself</label>
+                            <span class="circles">2</span>Your Purchase mode
+                        </label>
+                            <h4 class="">If you come as a group, you can benefit from our group-only offer: <br>buy 5 charger and get 1 for free <br>order your free personalised Roskilde memory hand bound</h4>
+                            <input type="radio" name="" value="">
+                            <label for="">Buy for Yourself</label>
+
+                            <input type="radio"  name="" value="">
+                            <label for="">Buy for Your Group of Friends</label>
+                            <p>You can purchase as a group of friends of 5 and you will all get personalised Roskilde memory hand bounds for free with the name of your Group.</p>
+                            <img src="images/" alt="hand bound">
+
+                    <input type="button" name="goback" class="backActionBtn" value="Go Back" />
+                    <input type="button" name="continue" data-field="continueBtn2" class="continueActionBtn" value="Continue" />
+
+                <!-- PURCHASE MODE PART WHEN GROUP SELECTED should be hidden otherwise-->
+                    <p>Invite your friends via Email. If minimum 4 of your friends sign up, you will all get the coupon for your free group bracelets. Pick them up at the festival!</p>      
+                    <label>
+                            Your friend's Email:
+                    </label>
+                    <input type="text" name="email" placeholder="jonas@holbech.dk">
+                    <input type="button" name="add" class="add action-button" value="+" />
+
                 </label> 
+                <label class="rightSideForm">
+                    <img id="voltCharger" src="images/Volt-Charger.png" alt="volt charger">
+                    <h2 class="rightHeader">What do I get?</h2>
+                    <p><i class="fas fa-check"></i>Swap it once a day  for a new fully charged one</p>
+                    <p><i class="fas fa-check"></i>No need to wait in line</p>
+                    <p><i class="fas fa-check"></i>Fits perfectly in your pocket</p>
+                    <p><i class="fas fa-check"></i>Refundable upon return</p>
+                    <img id="rightSideFormImg" src="images/landing-page-pic.jpg">
+
+                </label>
             </div>
 
         </fieldset>
+        
+    <!-- fieldset 3 : PAYMENT-->
+         <fieldset data-field="fieldset3">
+                <div class="container">
+                    <label class="leftSideForm">
+                            <h2 class="">Payment Information</h2>
+                            <div id="allPayContainer">
+                            <div class="payContainer"><img class="paymentImg" src="images/creaditcard-img.png" alt="credit card"></div>
+                            <div class="payContainer"><img class="paymentImg" src="images/paypal-img.png" alt="paypal"></div>
+                            <div class="payContainer"><img class="paymentImg" src="images/mobilepay-img.png" alt="paypal"></div>
+                            </div>
+                            <input type="number" name="number" placeholder="">
+                            <input type="text" name="email" placeholder="Jonas Holbech">
+                            <input type="number" name="expiry date" placeholder="02/2020">
+                            <input type="number" name="security code" placeholder="478">
 
-        <fieldset>
-            
+
+                    <input type="button" name="goback" class="backActionBtn" value="Go Back" />
+                    <input type="button" name="continue" data-field="continueBtn3" class="continueActionBtn" value="Continue" />
+                    </label>
+                    <label class="rightSideForm">
+                            <h2 class="rightHeader">How much do I pay?</h2>
+                            <p>1 Swapping service</p><p>179 DKK</p>
+                            <p>1 Volt Charger</p><p>200 DKK</p>                           
+                            <p>1 Volt Charger</p><p>200 DKK</p>
+                            <img id="rightSideFormImg" src="images/landing-page-pic.jpg">
+        
+                        </label>
         </fieldset>
+    <!-- fieldset 4 : THANK YOU-->
+    <fieldset data-field="fieldset4">
+    <div class="container">
+            <label class="leftSideForm">
+                    <h2 class="">Thank you for purchasing our service!</h2>
+                    <h2 class="">Roskilde Festival is waiting for you.</h2>
 
-        <fieldset>
+            </label>
+
+            <label class="rightSideForm">
+                    <img id="rightSideFormImg" src="images/landing-page-pic.jpg">
+                </label>
+    </div>
             
         </fieldset>
     </form>
