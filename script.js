@@ -1,5 +1,11 @@
 "use strict";
 
+window.onload = function init() {
+  alert(
+    "Hi there, please note that this is a school project! It is NOT from the company Volt itself."
+  );
+};
+
 // Variables for the progress bar to change color when clicking "continue"
 const continueBtn1 = document.querySelector("[data-field=continueBtn1]");
 const continueBtn2 = document.querySelector("[data-field=continueBtn2]");
@@ -94,11 +100,7 @@ function showProduct(event) {
 // });
 
 // Alert first that this is a school project
-/*
-window.onload = function init(){
-    alert("Hi there, please note that this is a school project! It is NOT from the company Volt itself.")
-}
-*/
+
 // calculate prices
 /*
 const chargerTotal = document.querySelector
@@ -116,60 +118,58 @@ chargerPcs.onchange = function  calculatePrices(){
 const inputFieldCharger = document.querySelector("[data-field=inputCharger]");
 const submitLast = document.querySelector("[data-field=continueBtn3]");
 
-
-function get(){
+function get() {
   fetch("https://allpets-7f82.restdb.io/rest/volt", {
-  method: "get",
-  headers: {
-    "Content-Type": "application/json; charset=utf-8",
-    "x-apikey": "5c7cef07cac6621685acbaec",
-    "cache-control": "no-cache"
-  }
-  })
-  .then(res => res.json())
-  .then(data => {
-    console.log(data)
-  //  data.forEach(showTasks);
-  });
-  }
-
-function post (myData){
-  fetch("https://allpets-7f82.restdb.io/rest/volt", {
-      method: "post",
-      body: JSON.stringify(myData),
-      headers:     {
+    method: "get",
+    headers: {
       "Content-Type": "application/json; charset=utf-8",
       "x-apikey": "5c7cef07cac6621685acbaec",
       "cache-control": "no-cache"
-}
+    }
   })
-  .then(res => res.json())
-  .then(data =>{
-  //      console.log(data);
-  });
+    .then(res => res.json())
+    .then(data => {
+      console.log(data);
+      //  data.forEach(showTasks);
+    });
+}
+
+function post(myData) {
+  fetch("https://allpets-7f82.restdb.io/rest/volt", {
+    method: "post",
+    body: JSON.stringify(myData),
+    headers: {
+      "Content-Type": "application/json; charset=utf-8",
+      "x-apikey": "5c7cef07cac6621685acbaec",
+      "cache-control": "no-cache"
+    }
+  })
+    .then(res => res.json())
+    .then(data => {
+      //      console.log(data);
+    });
 }
 // take as submit button only the last "BUY" button to add it all in one collection
 submitLast.addEventListener("click", postDataToBase);
-function postDataToBase(e){
+function postDataToBase(e) {
   console.log("submitted");
   const addedPersonData = {
-      service: fieldset1.elements.servicePcs.value,
-      charger: fieldset1.elements.chargerPcs.value,
-      firstname: fieldset2.elements.fname.value,
-      lastname: fieldset2.elements.lname.value,
-      email: fieldset2.elements.email.value,
-      country: fieldset2.elements.country.value,
-      phone: fieldset2.elements.phone.value,
-      password: fieldset2.elements.password.value,
-      single: fieldset2.elements.purchaseMode.value,
-      group: fieldset2.elements.purchaseMode.value,
-      cardnumber: fieldset3.elements.cardnumber.value,
-      cardholder: fieldset3.elements.cardholder.value,
-      expiry_date: fieldset3.elements.expirydate.value,
-      secure_code: fieldset3.elements.securecode.value
+    service: fieldset1.elements.servicePcs.value,
+    charger: fieldset1.elements.chargerPcs.value,
+    firstname: fieldset2.elements.fname.value,
+    lastname: fieldset2.elements.lname.value,
+    email: fieldset2.elements.email.value,
+    country: fieldset2.elements.country.value,
+    phone: fieldset2.elements.phone.value,
+    password: fieldset2.elements.password.value,
+    single: fieldset2.elements.purchaseMode.value,
+    group: fieldset2.elements.purchaseMode.value,
+    cardnumber: fieldset3.elements.cardnumber.value,
+    cardholder: fieldset3.elements.cardholder.value,
+    expiry_date: fieldset3.elements.expirydate.value,
+    secure_code: fieldset3.elements.securecode.value
   };
   console.log(addedPersonData);
 
   post(addedPersonData);
-}; 
-
+}

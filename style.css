@@ -12,7 +12,7 @@ ORANGE:
   box-sizing: border-box;
   font-family: "Lato", sans-serif;
 }
-#indexBody{
+#indexBody {
   background-image: url(images/landing-page-lighter-darker.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -47,6 +47,11 @@ li {
   width: 250px;
 }
 
+/* .bannerBackgroundPic {
+  background-image: url(images/right-side-form-image-s.jpg);
+  opacity: 0.4;
+  background-size: cover;
+}
 /* Progress Bar here*/
 #progressbar {
   margin: 2em;
@@ -122,8 +127,26 @@ form {
   padding: 2em;
 }
 .rightSideForm {
-  background-image: linear-gradient(#c4d600, #f9fbfa);
+  margin-top: 0;
+  margin-right: 0;
+  /* background-image: linear-gradient(#c4d600, #f9fbfa); */
   grid-column: 2 / 3;
+}
+
+.rightSideBanner {
+  background-image: url(images/blnededBannerS.png);
+  background-size: cover;
+  margin: 0;
+}
+.rightBannerPage2 {
+  background-image: linear-gradient(#c4d600, #f9fbfa);
+  margin: 0;
+}
+.whatDoIget {
+  padding: 40px;
+}
+.howMuchDoIPay {
+  padding: 40px;
 }
 h3 {
   margin: 2em 0 2em 0;
@@ -156,7 +179,13 @@ h3 {
 }
 
 /* General Rules for BUTTONS and INPUT*/
-
+.greenBtn {
+  font-size: 1em;
+  background-color: #9bbe40;
+  color: white;
+  padding: 10px;
+  border-radius: 8px;
+}
 .deliveryBtn {
   border-radius: 15px;
   border: solid 1px #c4d600;
@@ -224,7 +253,7 @@ h3 {
   width: 400px;
   color: white;
 }
-#addFriendEmail{
+#addFriendEmail {
   border-radius: 50%;
   width: 50px;
   height: 50px;
@@ -246,7 +275,7 @@ h3 {
   height: auto;
   margin-bottom: -1em;
 }
-#groupPic{
+#groupPic {
   width: 130px;
   height: auto;
 }
@@ -297,7 +326,7 @@ span.greenLine:after {
   margin-top: -0.5em;
   margin-right: 1em;
 }
-.PurchaseModeHeader{
+.PurchaseModeHeader {
   display: flex;
   flex-direction: row;
   font-size: 1.2em;
