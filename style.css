@@ -21,6 +21,7 @@ body {
   width: 100px;
   height: auto;
 }
+
 nav {
   background-color: black;
   display: inline-block;
@@ -188,6 +189,7 @@ h3 {
   font-size: 1em;
   background-color: #f9fbfc;
   margin: 0.5em;
+  min-width: 600px;
 }
 .continueActionBtn {
   margin: 2em;

@@ -14,6 +14,13 @@ const fieldset2 = document.querySelector("#mainForm #fieldset2");
 const fieldset3 = document.querySelector("#mainForm #fieldset3");
 const fieldset4 = document.querySelector("#mainForm #fieldset4");
 
+// Variables for the progress bar to go to the page back when clicking "go back"
+const goBackBtn1 = document.querySelector("[data-field=goBackBtn1]");
+const goBackBtn2 = document.querySelector("[data-field=goBackBtn2]");
+
+const gobackfieldset1 = document.querySelector("#mainForm #goBackBtn1");
+const gobackfieldset2 = document.querySelector("#mainForm #goBackBtn2");
+
 // variables for showing the second product on the product page, after choosing the delivery form
 const deliveryChoice1 = document.querySelector("[data-field=deliveryChoice1]");
 const deliveryChoice2 = document.querySelector("[data-field=deliveryChoice2]");
@@ -46,6 +53,23 @@ function switchFieldset(event) {
       console.log("error");
   }
 }
+
+// Using switch statement to go back to the previous page - not working yet
+// function previousFieldset(event) {
+//   switch (event.target) {
+//     case gobackfieldset1:
+//       fieldset1.classList.add("hidden");
+//       fieldset2.classList.remove("hidden");
+//       break;
+//     case continueBtn2:
+//       progressPay.classList.add("active");
+//       fieldset2.classList.add("hidden");
+//       fieldset3.classList.remove("hidden");
+//       break;
+//     default:
+//       console.log("error");
+//   }
+// }
 
 // Function for showing the second product when choosing the delivery
 deliveryChoice1.addEventListener("click", showProduct);

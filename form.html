@@ -44,7 +44,7 @@
                 </label>
                 <img class="productImg" src="images/Icon-volt.png" alt="">
                 <input class="pcsProduct" type="number" name="" min="1"><br>
-                <input class="priceProduct" type="number" name="" placeholder="179 DKK"><br>
+                <input class="priceProduct" type="number" min="179" name="" placeholder="179 DKK"><br>
 
              </div>
 
@@ -59,6 +59,7 @@
                    </label>
                    <img class="productImg" src="images/Volt-Charger.png" alt="volt charger">
                    <input class="pcsProduct" type="number" name="" min="1"><br>
+                   <input class="priceProduct" type="number" name=""  min="200" placeholder="200 DKK"><br>
                   </div>
                 
                 <input class="deliveryBtn" data-field="deliveryChoice2" type="button" name="shipped" value="Shipped to home"/><br>
@@ -69,6 +70,7 @@
                         </label>
                         <img class="productImg" src="images/Volt-Charger.png" alt="volt charger">
                         <input class="pcsProduct" type="number" name="" min="1"><br>
+                        <input class="priceProduct" type="number" name="" placeholder="200 DKK"><br>
                        </div>
 
                 <input class="deliveryBtn" type="button" name="own" value="Bringing own Volt Charger" /><br>
@@ -85,7 +87,6 @@
                     <p><i class="fas fa-check"></i>No need to wait in line</p>
                     <p><i class="fas fa-check"></i>Fits perfectly in your pocket</p>
                     <p><i class="fas fa-check"></i>Refundable upon return</p>
-                    <img id="rightSideFormImg" src="images/landing-page-pic.jpg">
 
                 </label>
         </div>
@@ -105,34 +106,57 @@
                 <!-- BASIC INFORMATION PART-->
                         <label>
                             <span class="circles">1</span>Your Basic Information
-                        </label><br>
-                        <label>First Name</label><br>
+                        </label>
+                        <br>
+                        <br>
+                        <label>First Name</label>
+                        <br>
                         <input class="signUpInput" type="text" name="fname" placeholder="Jonas"/>
-                        <label>Last Name</label><br>
+                        <br>
+                        <label>Last Name</label>
+                        <br>
                         <input class="signUpInput" type="text" name="lname" placeholder="Holbech"/><br>
-                        <label>Email</label><br>
+                        <label>Email</label>
+                        <br>
                         <input class="signUpInput" type="text" name="email" placeholder="jonas@holbech.dk"/><br>
-                        <label>Country</label><br>
+                        <label>Country</label>
+                        <br>
                         <input class="signUpInput" type="text" name="country" placeholder="Denmark"/><br>
-                        <label>Phone Number</label><br>
+                        <label>Phone Number</label>
+                        <br>
                         <input class="signUpInput" type="number" name="mobilenumber" placeholder="Phone number"/><br>
-                        <label>Password</label><br>
+                        <label>Password</label>
+                        <br>
                         <input class="signUpInput" type="password" name="password" placeholder="Password"/><br><br>
 
                 <!-- PURCHASE MODE PART-->
                         <label>
                             <span class="circles">2</span>Your Purchase mode
                         </label>
-                            <h4 class="">If you come as a group, you can benefit from our group-only offer: <br>buy 5 charger and get 1 for free <br>order your free personalised Roskilde memory hand bound</h4>
-                            <input type="radio" name="" value="">
-                            <label for="">Buy for Yourself</label>
-
-                            <input type="radio"  name="" value="">
-                            <label for="">Buy for Your Group of Friends</label>
+                        <br>
+                        <br>
+                        <p>If you come as a group, you can benefit from our group-only offer: </p>
+<img src="images/right_arrow.png" alt="right arrow">
+                        <p>buy 5 charger and get 1 for free</p>
+                        <img src="images/right_arrow.png" alt="right arrow">
+                        <p>order your free personalised Roskilde memory hand bound</p>
+<br>
+<input type="radio" name="purchaseMode" id="buyYourself">
+                        <label name="purchaseMode" for="buyYourself">Buy For Yourself</label>
+                        <img src="images/yourself.png" alt="portrait">
+            <br>
+            <img src="images/grouppic.png" alt="group">
+            <input type="radio" name="purchaseMode" id="buyAsGroup">
+                        <label name="purchaseMode" for="buyAsGroup">Buy with Your Friends as a Group
                             <p>You can purchase as a group of friends of 5 and you will all get personalised Roskilde memory hand bounds for free with the name of your Group.</p>
-                            <img src="images/" alt="hand bound">
+                            <img src="images/bracelet.png" alt="hand band">
+                        </label>
+                        
+        
+                         
+<br> 
 
-                    <input type="button" name="goback" class="backActionBtn" value="Go Back" />
+                    <input type="button" id="goBackBtn1" data-field="goBackBtn1" name="goback" class="backActionBtn" value="Go Back" />
                     <input type="button" name="continue" data-field="continueBtn2" class="continueActionBtn" value="Continue" />
 
                 <!-- PURCHASE MODE PART WHEN GROUP SELECTED should be hidden otherwise-->
@@ -163,13 +187,24 @@
                             <div class="payContainer"><img class="paymentImg" src="images/paypal-img.png" alt="paypal"></div>
                             <div class="payContainer"><img class="paymentImg" src="images/mobilepay-img.png" alt="paypal"></div>
                             </div>
-                            <input type="number" name="number" placeholder="">
-                            <input type="text" name="email" placeholder="Jonas Holbech">
+                            <label name="card_number">Card number:</label>
+                            <br>
+                            <input type="number" name="card_number" placeholder="98654332">
+                            <br>
+                            <label name="email">E-mail:</label>
+                            <br>
+                            <input type="text" name="email" placeholder="johnHack@gmail.com">
+<br>
+                            <label name="expiry date" >Expiry date:</label>
+                            <br>
                             <input type="number" name="expiry date" placeholder="02/2020">
+                            <br>
+                            <label name="security code" >Security code:</label>
+                            <br>
                             <input type="number" name="security code" placeholder="478">
+                            <br>
 
-
-                    <input type="button" name="goback" class="backActionBtn" value="Go Back" />
+                    <input type="button" id="goBackBtn2" data-field="goBackBtn2" name="goback" class="backActionBtn" value="Go Back" />
                     <input type="button" name="continue" data-field="continueBtn3" class="continueActionBtn" value="Continue" />
                     </label>
                     <label class="rightSideForm">
