@@ -5,263 +5,293 @@ GRAY:
 BLUE:
 ORANGE:
 */
-@import url('https://fonts.googleapis.com/css?family=Lato');
+@import url("https://fonts.googleapis.com/css?family=Lato");
 
-*{
-    margin: 0;
-    box-sizing: border-box;
-    font-family: "Lato", sans-serif;
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Lato", sans-serif;
 }
-body{
-    background-image: url(images/landing-page-opacity-blurred.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
+body {
+  background-image: url(images/landing-page-opacity-blurred.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-.voltLogo{
-    width: 100px;
-    height: auto;
+.voltLogo {
+  width: 100px;
+  height: auto;
 }
-nav{
-    background-color: black;
-    display: inline-block;
-    width: 100vw;
+nav {
+  background-color: black;
+  display: inline-block;
+  width: 100vw;
 }
-li{
-    list-style: none;
-    display: inline-block;
+li {
+  list-style: none;
+  display: inline-block;
 }
 .navBar li {
-    display: inline-block;
-    color: white;
-    font-size: 1.5em;
-    margin: 1em;
+  display: inline-block;
+  color: white;
+  font-size: 1.5em;
+  margin: 1em;
+}
+
+#landingChargerPic {
+  width: 250px;
 }
 
 /* Progress Bar here*/
 #progressbar {
-    margin: 2em;
-    margin-left: 9em;
-    font-size: 1.5em;
-    text-align: center;
-    display: flex;
-    flex-direction: row;
+  margin: 2em;
+  margin-left: 9em;
+  font-size: 1.5em;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
 }
-#progressbar li{
-    display: flex;
-    align-items: center;
-    width: 100%;
+#progressbar li {
+  display: flex;
+  align-items: center;
+  width: 100%;
 }
 
 #progressbar li:after {
-    content: '';
-	width: 100%;
-	height: 2px;
-    background:  dimgrey;
-    height: 0.1em;
-	flex: 1;
-	margin: 0.2em;
+  content: "";
+  width: 100%;
+  height: 2px;
+  background: dimgrey;
+  height: 0.1em;
+  flex: 1;
+  margin: 0.2em;
 }
-.active{
-	color: #9BBE40;
+.active {
+  color: #9bbe40;
 }
-#progressbar li:first-child{
-    color:#9BBE40;
+#progressbar li:first-child {
+  color: #9bbe40;
 }
 #progressbar li:last-child:after {
-	/*connector not needed before the first step*/
-	content: none; 
+  /*connector not needed before the first step*/
+  content: none;
 }
 /*marking active/completed steps green*/
 /*The number of the step and the connector before it = green*/
-#progressbar li.active:before,  #progressbar li.active:after{
-	background: #9BBE40;
-	color: white;
+#progressbar li.active:before,
+#progressbar li.active:after {
+  background: #9bbe40;
+  color: white;
 }
 /* Rules for the MAIN FORM */
-form{
-    margin-bottom: 4em;
+form {
+  margin-bottom: 4em;
 }
-#mainForm fieldset{
-    padding: -0.5em;
-    margin-top: 2em;
-    background: white;
-	border: 0 none;
-	border-radius: 3px;
-	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
-    width: 60vw;
-    margin: auto;
-    display: block;
-/*stacking fieldsets above each other*/
-	position: relative;
+#mainForm fieldset {
+  padding: -0.5em;
+  margin-top: 2em;
+  background: white;
+  border: 0 none;
+  border-radius: 3px;
+  box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+  width: 60vw;
+  margin: auto;
+  display: block;
+  /*stacking fieldsets above each other*/
+  position: relative;
 }
 /* hide all fieldsets except the first one
 #mainForm fieldset:not(:first-of-type) {
 	display: none;
 }*/
-.hidden{
-    display: none;
+.hidden {
+  display: none !important;
 }
-.container{
-    margin: auto;
-    display: grid;
-    grid-template-columns: 2fr 1fr;
+.container {
+  margin: auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
 }
-.leftSideForm{
-    grid-column: 1 / 2;
-    padding: 2em;
+.leftSideForm {
+  grid-column: 1 / 2;
+  padding: 2em;
 }
-.rightSideForm{
-    background-image: linear-gradient(#c4d600,#F9FBFA);
-    grid-column: 2 / 3;
+.rightSideForm {
+  background-image: linear-gradient(#c4d600, #f9fbfa);
+  grid-column: 2 / 3;
 }
-h3{
-    margin: 2em 0 2em 0;
-    font-weight: normal;
+h3 {
+  margin: 2em 0 2em 0;
+  font-weight: normal;
 }
+
+.landingPageContainer {
+  margin: auto;
+  display: grid;
+  grid-template-columns: 2fr 4fr 2fr;
+  grid-template-row: 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+    ". landingPageRow1 ."
+    ". landingPageRow .";
+}
+
+.landingPageRow1 {
+  grid-row: 2/2;
+  grid-column: 2/2;
+}
+.landingPageRow2 {
+  grid-row: 3/3;
+  grid-column: 2/2;
+}
+.landingPageRow1,
+.landingPageRow2 {
+  padding: 30px;
+  padding-top: 50px;
+  font-size: 24px;
+}
+
 /* General Rules for BUTTONS and INPUT*/
 
-.deliveryBtn{
-    border-radius: 15px;
-    border: solid 1px #c4d600;
-    padding: 0.5em;
-    height: 3em;
-    font-size: 1em;
-    margin: 0.5em;
-    width: 400px;
+.deliveryBtn {
+  border-radius: 15px;
+  border: solid 1px #c4d600;
+  padding: 0.5em;
+  height: 3em;
+  font-size: 1em;
+  margin: 0.5em;
+  width: 400px;
 }
-.pcsProduct{
-    height: 2.5em;
-    width: 60px;
-    margin: 0.5em;
-    text-align: center;
-    font-size: 1em;
-    float: right;
+.pcsProduct {
+  height: 2.5em;
+  width: 60px;
+  margin: 0.5em;
+  text-align: center;
+  font-size: 1em;
+  float: right;
 }
-.priceProduct{
-    height: 2.5em;
-    width: 90px;
-    margin: 0.5em;
-    text-align: center;
-    font-size: 1em;
+.priceProduct {
+  height: 2.5em;
+  width: 90px;
+  margin: 0.5em;
+  text-align: center;
+  font-size: 1em;
 }
-.deliveryBtn:hover{
-   background-color: #c4d600;
-   color: white;
+.deliveryBtn:hover {
+  background-color: #c4d600;
+  color: white;
 }
-.signUpInput{
-    padding: 15px;
-	border: 1px solid #ccc;
-    border-radius: 7px;
-    padding: 0.3em;
-    height: 2.5em;
-    font-size: 1em;
-    background-color: #F9FBFC;
-    margin: 0.5em;
+.signUpInput {
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 7px;
+  padding: 0.3em;
+  height: 2.5em;
+  font-size: 1em;
+  background-color: #f9fbfc;
+  margin: 0.5em;
 }
-.continueActionBtn{
-   margin: 2em;
-   float: right;
-   width: 130px;
-   height: 2.5em;
-   font-size: 1.2em;
-   background-color: #9BBE40;
-   color: white;
+.continueActionBtn {
+  margin: 2em;
+  float: right;
+  width: 130px;
+  height: 2.5em;
+  font-size: 1.2em;
+  background-color: #9bbe40;
+  color: white;
 }
-.backActionBtn{
-    margin: 2em;
-    float: left;
-    width: 130px;
-    height: 2.5em;
-    font-size: 1.2em;
-    background-color: #807777;
-    color: white;
- }
- #facebookBtn{
-    border-radius: 15px;
-    background-color: #0079CE;
-    padding: 0.5em;
-    height: 3em;
-    font-size: 1em;
-    margin: 0.5em;
-    width: 400px;
-    color: white;
- }
+.backActionBtn {
+  margin: 2em;
+  float: left;
+  width: 130px;
+  height: 2.5em;
+  font-size: 1.2em;
+  background-color: #807777;
+  color: white;
+}
+#facebookBtn {
+  border-radius: 15px;
+  background-color: #0079ce;
+  padding: 0.5em;
+  height: 3em;
+  font-size: 1em;
+  margin: 0.5em;
+  width: 400px;
+  color: white;
+}
 /* Rules for Images in the form */
 
-#voltCharger{
-    width: 100px;
-    height: auto;
-    display: block;
-    margin: auto;
+#voltCharger {
+  width: 100px;
+  height: auto;
+  display: block;
+  margin: auto;
 }
-#rightSideFormImg{
-    width: 300px;
-    height: auto;
-    margin-bottom: -1em;
+#rightSideFormImg {
+  width: 300px;
+  height: auto;
+  margin-bottom: -1em;
 }
 /* fieldset 1: PRODUCT */
-#productContainer{
-    background-color: #ECF7CF;
-    padding: 1em;
-    border-radius: 7px;
-    display: flex;
-    flex-direction: row;
-    width: 500px;
+#productContainer {
+  background-color: #ecf7cf;
+  padding: 1em;
+  border-radius: 7px;
+  display: flex;
+  flex-direction: row;
+  width: 500px;
 }
-.productImg{
-    width: 50px;
-    height: 45px;
+.productImg {
+  width: 50px;
+  height: 45px;
 }
-.secProductContainer{
-    background-color: #FDE4D2;
-    padding: 1em;
-    border-radius: 7px;
-    display: flex;
-    flex-direction: row;
-    width: 500px;
+.secProductContainer {
+  background-color: #fde4d2;
+  padding: 1em;
+  border-radius: 7px;
+  display: flex;
+  flex-direction: row;
+  width: 500px;
 }
 /* fieldset 2: SIGN UP FORM*/
-.rightHeader{
-    margin-top: 3em;
-    margin-left: 2.5em;
-    z-index: 1;
+.rightHeader {
+  margin-top: 3em;
+  margin-left: 2.5em;
+  z-index: 1;
 }
-span.greenLine:after{
-    content: '-';
-	width: 100%;
-	height: 2px;
-    background:  #c4d600;
-    height: 0.1em;
-	margin: 0.2em;
+span.greenLine:after {
+  content: "-";
+  width: 100%;
+  height: 2px;
+  background: #c4d600;
+  height: 0.1em;
+  margin: 0.2em;
 }
-.circles{
-    display: block;
-    line-height: 30px;
-    border: 2px solid #c4d600;
-    border-radius: 50%;
-    padding: 0.3em 0.3em 0.5em 0.3em;
-    height: 40px;
-    width: 40px;
-    text-align: center;
+.circles {
+  display: block;
+  line-height: 30px;
+  border: 2px solid #c4d600;
+  border-radius: 50%;
+  padding: 0.3em 0.3em 0.5em 0.3em;
+  height: 40px;
+  width: 40px;
+  text-align: center;
 }
 /* fieldset 3: PAYMENT */
-.paymentImg{
-    width: auto;
-    height: 90px;
+.paymentImg {
+  width: auto;
+  height: 90px;
 }
-#allPayContainer{
-    display: flex;
-    flex-direction: row;
+#allPayContainer {
+  display: flex;
+  flex-direction: row;
 }
-.payContainer{
-    margin: 1em;
-    width: 120px;
-    height: 110px;
-    padding: 0.5em;
-    border: 1px solid #807777;
-    border-radius: 7px;
+.payContainer {
+  margin: 1em;
+  width: 120px;
+  height: 110px;
+  padding: 0.5em;
+  border: 1px solid #807777;
+  border-radius: 7px;
 }
-.payContainer:hover{
-    border: 2px solid #9BBE40;
-
+.payContainer:hover {
+  border: 2px solid #9bbe40;
 }

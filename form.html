@@ -13,7 +13,7 @@
     
             <nav class="navBar">
                 <ul>
-                    <li><img class="voltLogo" src="images/Volt-logo.png" alt="volt logo"></li>
+                    <li><img onclick="window.location.href='index.html'" class="voltLogo" src="images/Volt-logo.png" alt="volt logo"></li>
                     <li><a>Festivals</a></li>
                     <li><a>Volunteer</a></li>
                     <li><a>Shop</a></li>
@@ -33,7 +33,7 @@
       </ul>
 
       <!-- fieldset 1 : PRODUCT-->
-        <fieldset data-field="fieldset1" class="">
+        <fieldset data-field="fieldset1" id="fieldset1" class="">
             <div class="container">
             <!--Left side of the form-->
             <label class="leftSideForm">
@@ -77,16 +77,23 @@
             </label>
 
             <!--Right side of the form-->
+          
             <label class="rightSideForm">
-             <h2 class="rightHeader">Stay charged.<br>Be connected.</h2>
-             <img src="images/right-side-form-image-s.jpg" alt="photo of festival">
-            </label>
+                    <img id="voltCharger" src="images/Volt-Charger.png" alt="volt charger">
+                    <h2 class="rightHeader">What do I get?</h2>
+                    <p><i class="fas fa-check"></i>Swap it once a day  for a new fully charged one</p>
+                    <p><i class="fas fa-check"></i>No need to wait in line</p>
+                    <p><i class="fas fa-check"></i>Fits perfectly in your pocket</p>
+                    <p><i class="fas fa-check"></i>Refundable upon return</p>
+                    <img id="rightSideFormImg" src="images/landing-page-pic.jpg">
+
+                </label>
         </div>
             </fieldset>
 
       <!-- fieldset 2 : SIGN UP-->
 
-        <fieldset data-field="fieldset2">
+        <fieldset data-field="fieldset2" id="fieldset2" class="hidden">
             <div class="container">
                 <label class="leftSideForm">
                         <h2 class="">Sign up for Volt</h2>
@@ -137,22 +144,17 @@
                     <input type="button" name="add" class="add action-button" value="+" />
 
                 </label> 
-                <label class="rightSideForm">
-                    <img id="voltCharger" src="images/Volt-Charger.png" alt="volt charger">
-                    <h2 class="rightHeader">What do I get?</h2>
-                    <p><i class="fas fa-check"></i>Swap it once a day  for a new fully charged one</p>
-                    <p><i class="fas fa-check"></i>No need to wait in line</p>
-                    <p><i class="fas fa-check"></i>Fits perfectly in your pocket</p>
-                    <p><i class="fas fa-check"></i>Refundable upon return</p>
-                    <img id="rightSideFormImg" src="images/landing-page-pic.jpg">
-
-                </label>
+                 <!--Right side of the form-->
+            <label class="rightSideForm">
+                    <h2 class="rightHeader">Stay charged.<br>Be connected.</h2>
+                    <img src="images/right-side-form-image-s.jpg" alt="photo of festival">
+                   </label>
             </div>
 
         </fieldset>
         
     <!-- fieldset 3 : PAYMENT-->
-         <fieldset data-field="fieldset3">
+         <fieldset data-field="fieldset3" id="fieldset3" class="hidden">
                 <div class="container">
                     <label class="leftSideForm">
                             <h2 class="">Payment Information</h2>
@@ -180,12 +182,12 @@
                         </label>
         </fieldset>
     <!-- fieldset 4 : THANK YOU-->
-    <fieldset data-field="fieldset4">
+    <fieldset data-field="fieldset4" id="fieldset4" class="hidden">
     <div class="container">
             <label class="leftSideForm">
-                    <h2 class="">Thank you for purchasing our service!</h2>
-                    <h2 class="">Roskilde Festival is waiting for you.</h2>
-
+                    <h2 class="">Thank you for purchasing our service.</h2>
+                    <h3 class="">Roskilde Festival is waiting for you!</h3>
+                   <button class=""onclick="window.location.href='index.html'">Go back</button>
             </label>
 
             <label class="rightSideForm">
