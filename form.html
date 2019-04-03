@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <title>Volt Form</title>
 </head>
-<body>
+<body id="formBody">
     <!--Nav bar-->
     
             <nav class="navBar">
@@ -43,7 +43,7 @@
              <div id="productContainer"><label><strong>Volt Recharging Service at Roskilde Festival</strong><br>Swap your Volt Charger every day for a fully charged one.
                 </label>
                 <img class="productImg" src="images/Icon-volt.png" alt="">
-                <input class="pcsProduct" type="number" name="" min="1"><br>
+                <input class="pcsProduct" data-field="servicePcsInput" type="number" name="servicePcs" min="1"><br>
                 <input class="priceProduct" type="number" min="179" name="" placeholder="179 DKK"><br>
 
              </div>
@@ -58,7 +58,7 @@
                    <label><strong> Volt Charger Deposit</strong><br>The deposit is refundable at anytime during the event
                    </label>
                    <img class="productImg" src="images/Volt-Charger.png" alt="volt charger">
-                   <input class="pcsProduct" type="number" name="" min="1"><br>
+                   <input data-field="inputCharger" class="pcsProduct" type="number" name="chargerPcs" min="1" required><br>
                    <input class="priceProduct" type="number" name=""  min="200" placeholder="200 DKK"><br>
                   </div>
                 
@@ -104,7 +104,7 @@
                         <h3>Sign up with your Email address</h3>
 
                 <!-- BASIC INFORMATION PART-->
-                        <label>
+                        <label class="PurchaseModeHeader">
                             <span class="circles">1</span>Your Basic Information
                         </label>
                         <br>
@@ -124,13 +124,13 @@
                         <input class="signUpInput" type="text" name="country" placeholder="Denmark"/><br>
                         <label>Phone Number</label>
                         <br>
-                        <input class="signUpInput" type="number" name="mobilenumber" placeholder="Phone number"/><br>
+                        <input class="signUpInput" type="tel" name="phone" placeholder="0045 507765"/><br>
                         <label>Password</label>
                         <br>
                         <input class="signUpInput" type="password" name="password" placeholder="Password"/><br><br>
 
                 <!-- PURCHASE MODE PART-->
-                        <label>
+                        <label class="PurchaseModeHeader">
                             <span class="circles">2</span>Your Purchase mode
                         </label>
                         <br>
@@ -145,27 +145,23 @@
                         <label name="purchaseMode" for="buyYourself">Buy For Yourself</label>
                         <img src="images/yourself.png" alt="portrait">
             <br>
-            <img src="images/grouppic.png" alt="group">
+            <img id="groupPic" src="images/grouppic.png" alt="group">
             <input type="radio" name="purchaseMode" id="buyAsGroup">
                         <label name="purchaseMode" for="buyAsGroup">Buy with Your Friends as a Group
                             <p>You can purchase as a group of friends of 5 and you will all get personalised Roskilde memory hand bounds for free with the name of your Group.</p>
                             <img src="images/bracelet.png" alt="hand band">
-                        </label>
-                        
-        
-                         
-<br> 
+                        </label><br> 
 
-                    <input type="button" id="goBackBtn1" data-field="goBackBtn1" name="goback" class="backActionBtn" value="Go Back" />
-                    <input type="button" name="continue" data-field="continueBtn2" class="continueActionBtn" value="Continue" />
-
-                <!-- PURCHASE MODE PART WHEN GROUP SELECTED should be hidden otherwise-->
-                    <p>Invite your friends via Email. If minimum 4 of your friends sign up, you will all get the coupon for your free group bracelets. Pick them up at the festival!</p>      
+        <!-- PURCHASE MODE PART WHEN GROUP SELECTED should be hidden otherwise-->
+                    <p>Invite your friends via Email. If minimum 4 of your friends sign up, you will all get the coupon for your free group bracelets. Pick them up at the festival!</p><br>      
                     <label>
                             Your friend's Email:
                     </label>
-                    <input type="text" name="email" placeholder="jonas@holbech.dk">
-                    <input type="button" name="add" class="add action-button" value="+" />
+                    <input class="signUpInput" type="text" name="email" placeholder="jonas@holbech.dk">
+                    <input id="addFriendEmail" type="button" name="add" class="add action-button" value="+" />
+
+                    <input type="button" id="goBackBtn1" data-field="goBackBtn1" name="goback" class="backActionBtn" value="Go Back" />
+                    <input type="button" name="continue" data-field="continueBtn2" class="continueActionBtn" value="Continue" />
 
                 </label> 
                  <!--Right side of the form-->
@@ -189,23 +185,23 @@
                             </div>
                             <label name="card_number">Card number:</label>
                             <br>
-                            <input type="number" name="card_number" placeholder="98654332">
+                            <input type="number" name="cardnumber" placeholder="98654332">
                             <br>
                             <label name="email">E-mail:</label>
                             <br>
-                            <input type="text" name="email" placeholder="johnHack@gmail.com">
+                            <input type="text" name="cardholder" placeholder="Jonas Holbech">
 <br>
-                            <label name="expiry date" >Expiry date:</label>
+                            <label name="expiry" >Expiry date:</label>
                             <br>
-                            <input type="number" name="expiry date" placeholder="02/2020">
+                            <input type="number" name="expirydate" placeholder="02/2020">
                             <br>
                             <label name="security code" >Security code:</label>
                             <br>
-                            <input type="number" name="security code" placeholder="478">
+                            <input type="number" name="securecode" placeholder="478">
                             <br>
 
                     <input type="button" id="goBackBtn2" data-field="goBackBtn2" name="goback" class="backActionBtn" value="Go Back" />
-                    <input type="button" name="continue" data-field="continueBtn3" class="continueActionBtn" value="Continue" />
+                    <input type="button" name="continue" data-field="continueBtn3" class="continueActionBtn" value="Purchase" />
                     </label>
                     <label class="rightSideForm">
                             <h2 class="rightHeader">How much do I pay?</h2>

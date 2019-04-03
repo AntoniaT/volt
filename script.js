@@ -98,8 +98,41 @@ function showProduct(event) {
 window.onload = function init(){
     alert("Hi there, please note that this is a school project! It is NOT from the company Volt itself.")
 }
+*/
+// calculate prices
+/*
+const chargerTotal = document.querySelector
+let chargerPrice = 179;
+let chargerValue = document.querySelector("[data-field=servicePcsInput]").value;
 
+let chargerPcs = document.querySelector("[data-field=servicePcsInput]");
+chargerPcs.onchange = function  calculatePrices(){
+  let SumCharger = chargerPrice * chargerValue;
+
+  console.log(SumCharger);
+}
+*/
 // get data and store it in Database
+const inputFieldCharger = document.querySelector("[data-field=inputCharger]");
+const submitLast = document.querySelector("[data-field=continueBtn3]");
+
+
+function get(){
+  fetch("https://allpets-7f82.restdb.io/rest/volt", {
+  method: "get",
+  headers: {
+    "Content-Type": "application/json; charset=utf-8",
+    "x-apikey": "5c7cef07cac6621685acbaec",
+    "cache-control": "no-cache"
+  }
+  })
+  .then(res => res.json())
+  .then(data => {
+    console.log(data)
+  //  data.forEach(showTasks);
+  });
+  }
+
 function post (myData){
   fetch("https://allpets-7f82.restdb.io/rest/volt", {
       method: "post",
@@ -112,34 +145,31 @@ function post (myData){
   })
   .then(res => res.json())
   .then(data =>{
-//        console.log(data);
+  //      console.log(data);
   });
 }
-
-const form = document.querySelector("form");
-form.addEventListener("submit", e =>{
-  e.preventDefault();
+// take as submit button only the last "BUY" button to add it all in one collection
+submitLast.addEventListener("click", postDataToBase);
+function postDataToBase(e){
   console.log("submitted");
-  const addedTask = {
-      task: form.elements.task.value,
-   //   when: form.elements.time.value
+  const addedPersonData = {
+      service: fieldset1.elements.servicePcs.value,
+      charger: fieldset1.elements.chargerPcs.value,
+      firstname: fieldset2.elements.fname.value,
+      lastname: fieldset2.elements.lname.value,
+      email: fieldset2.elements.email.value,
+      country: fieldset2.elements.country.value,
+      phone: fieldset2.elements.phone.value,
+      password: fieldset2.elements.password.value,
+      single: fieldset2.elements.purchaseMode.value,
+      group: fieldset2.elements.purchaseMode.value,
+      cardnumber: fieldset3.elements.cardnumber.value,
+      cardholder: fieldset3.elements.cardholder.value,
+      expiry_date: fieldset3.elements.expirydate.value,
+      secure_code: fieldset3.elements.securecode.value
   };
-  console.log(addedTask);
+  console.log(addedPersonData);
 
-  post(addedTask);
-}); 
+  post(addedPersonData);
+}; 
 
-function deleteTask(id){
-fetch("https://allpets-7f82.restdb.io/rest/volt" + id, {
-method: "delete",
-headers: {
-  "Content-Type": "application/json; charset=utf-8",
-  "x-apikey": "5c7cef07cac6621685acbaec",
-  "cache-control": "no-cache"
-}
-})
-.then(res => res.json())
-.then(data => {
-  console.log(data)
-});
-} */
