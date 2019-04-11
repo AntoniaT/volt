@@ -23,14 +23,18 @@ ORANGE:
   background-size: cover;
 }
 .voltLogo {
+  margin-top; 1em;
   width: 100px;
   height: auto;
 }
 
 nav {
   background-color: black;
-  display: inline-block;
+  display: flex;
+  flex-direction: row;
   width: 100vw;
+  align-items: center;
+  height: 6em;
 }
 li {
   list-style: none;
@@ -40,11 +44,16 @@ li {
   display: inline-block;
   color: white;
   font-size: 1.5em;
-  margin: 1em;
+  margin-left: 1em;
+  margin-right: 1em;
 }
-
+.navLinks{
+  margin-left: 10em;
+  margin-top: -3.2em;
+}
 #landingChargerPic {
-  width: 250px;
+  margin-top: -1em;
+  width: 400px;
 }
 
 /* .bannerBackgroundPic {
@@ -156,35 +165,43 @@ h3 {
 .landingPageContainer {
   margin: auto;
   display: grid;
-  grid-template-columns: 2fr 4fr 2fr;
-  grid-template-row: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 2fr 2fr;
+  /*grid-template-rows: 1fr 1fr 1fr 1fr;*/
   grid-template-areas:
     ". landingPageRow1 ."
-    ". landingPageRow .";
+    ". landingPageRow ButtonRow";
 }
 
 .landingPageRow1 {
+  margin-top: 1em;
   grid-row: 2/2;
   grid-column: 2/2;
 }
 .landingPageRow2 {
   grid-row: 3/3;
   grid-column: 2/2;
-}
-.landingPageRow1,
-.landingPageRow2 {
-  padding: 30px;
-  padding-top: 50px;
   font-size: 24px;
+  padding: 0px 30px 30px 30px;
+}
+.landingPageRow1 {
+  padding: 80px 30px 0px 30px;
+  font-size: 24px;
+}
+.landingPageRow3 {
+  grid-row: 3/3;
+  grid-column: 3/4;
+  padding-top: 2em;
 }
 
 /* General Rules for BUTTONS and INPUT*/
 .greenBtn {
-  font-size: 1em;
+  font-size: 24px;
   background-color: #9bbe40;
   color: white;
   padding: 10px;
   border-radius: 8px;
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.3);
+
 }
 .deliveryBtn {
   border-radius: 15px;
