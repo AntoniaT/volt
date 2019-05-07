@@ -141,21 +141,47 @@ form {
   /* background-image: linear-gradient(#c4d600, #f9fbfa); */
   grid-column: 2 / 3;
 }
+.leftSideFormGrid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat 1fr;
+  grid-template-areas: 
+  "left right"
+  "left1 right1"
+  "left2 right2"
+  "left3 right3"
 
+
+}
+.leftGrid{
+  grid-area: left;
+}
+.leftGrid1{
+  grid-area: left1;
+}
+.leftGrid2{
+  grid-area: left2;
+}
+.rightGrid{
+  grid-area: right;
+}
 .rightSideBanner {
   background-image: url(images/blnededBannerS.png);
   background-size: cover;
-  margin: 0;
+  margin: -0.6em -0.8em;
 }
 .rightBannerPage2 {
   background-image: linear-gradient(#c4d600, #f9fbfa);
-  margin: 0;
+  margin: -0.6em -0.8em;
 }
 .whatDoIget {
   padding: 40px;
 }
 .howMuchDoIPay {
   padding: 40px;
+}
+.fa-check-circle, .fa-arrow-right{
+  color: #9bbe40;
 }
 h3 {
   margin: 2em 0 2em 0;
@@ -320,8 +346,10 @@ h3 {
 /* fieldset 2: SIGN UP FORM*/
 .rightHeader {
   margin-top: 3em;
-  margin-left: 2.5em;
+  margin-left: 1.5em;
+  text-align: left;
   z-index: 1;
+  min-width: 180px;
 }
 span.greenLine:after {
   content: "-";

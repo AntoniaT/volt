@@ -1,10 +1,10 @@
 "use strict";
 
-window.onload = function init() {
+/* window.onload = function init() {
   alert(
     "Hi there, please note that this is a school project! It is NOT from the company Volt itself."
   );
-};
+}; */
 
 // Variables for the progress bar to change color when clicking "continue"
 const continueBtn1 = document.querySelector("[data-field=continueBtn1]");

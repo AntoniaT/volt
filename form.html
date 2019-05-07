@@ -14,11 +14,13 @@
             <nav class="navBar">
                 <ul>
                     <li><img onclick="window.location.href='index.html'" class="voltLogo" src="images/Volt-logo.png" alt="volt logo"></li>
+                    <div class="navLinks">
                     <li><a>Festivals</a></li>
                     <li><a>Volunteer</a></li>
                     <li><a>Shop</a></li>
                     <li><a>Help</a></li>
                     <li><a>Blog</a></li>
+                    </div> 
                 </ul>
             </nav>
 
@@ -99,46 +101,50 @@
                         <h3>Sign up with your Email address</h3>
 
                 <!-- BASIC INFORMATION PART-->
+                <div class="leftSideFormGrid">
                         <label class="PurchaseModeHeader">
                             <span class="circles">1</span>Your Basic Information
                         </label>
                         <br>
                         <br>
-                        <label>First Name</label>
+                        <label class="leftGrid">First Name
                         <br>
                         <input class="signUpInput" type="text" name="fname" placeholder="Jonas"/>
+                        </label>
                         <br>
-                        <label>Last Name</label>
+                        <label class="rightGrid">Last Name
                         <br>
                         <input class="signUpInput" type="text" name="lname" placeholder="Holbech"/><br>
-                        <label>Email</label>
+                        </label>
+                        <label class="leftGrid">Email
                         <br>
                         <input class="signUpInput" type="text" name="email" placeholder="jonas@holbech.dk"/><br>
-                        <label>Country</label>
+                        </label>
+                        <label class="leftGrid">Country
                         <br>
                         <input class="signUpInput" type="text" name="country" placeholder="Denmark"/><br>
-                        <label>Phone Number</label>
+                        </label>
+                        <label class="leftGrid">Phone Number
                         <br>
                         <input class="signUpInput" type="tel" name="phone" placeholder="0045 507765"/><br>
-                        <label>Password</label>
+                        </label>
+                        <label class="leftGrid">Password
                         <br>
                         <input class="signUpInput" type="password" name="password" placeholder="Password"/><br><br>
-
-                <!-- PURCHASE MODE PART-->
-                        <label class="PurchaseModeHeader">
-                            <span class="circles">2</span>Your Purchase mode
                         </label>
+                <!-- PURCHASE MODE PART-->
+                    <article class="PurchaseModeHeader leftGrid">
+                            <span class="circles">2</span>Your Purchase mode
                         <br>
                         <br>
                         <p>If you come as a group, you can benefit from our group-only offer: </p>
-<img src="images/right_arrow.png" alt="right arrow">
-                        <p>buy 5 charger and get 1 for free</p>
-                        <img src="images/right_arrow.png" alt="right arrow">
-                        <p>order your free personalised Roskilde memory hand bound</p>
-<br>
-<input type="radio" name="purchaseMode" id="buyYourself">
-                        <label name="purchaseMode" for="buyYourself">Buy For Yourself</label>
+                        <p></p><i class="fas fa-arrow-right"></i> buy 5 charger and get 1 for free</p>
+                        <p><i class="fas fa-arrow-right"></i> order your free personalised Roskilde memory hand bound</p>
+                    </article>
+                        <br>
                         <img src="images/yourself.png" alt="portrait">
+                        <input type="radio" name="purchaseMode" id="buyYourself">
+                        <label name="purchaseMode" for="buyYourself">Buy For Yourself</label>
             <br>
             <img id="groupPic" src="images/grouppic.png" alt="group">
             <input type="radio" name="purchaseMode" id="buyAsGroup">
@@ -158,15 +164,16 @@
                     <input type="button" id="goBackBtn1" data-field="goBackBtn1" name="goback" class="backActionBtn" value="Go Back" />
                     <input type="button" name="continue" data-field="continueBtn2" class="continueActionBtn" value="Continue" />
 
-                </label> 
+                </div>
+                </label>
                  <!--Right side of the form-->
                     <label class="rightSideForm rightBannerPage2 whatDoIget">
                             <img id="voltCharger"src="images/Volt-Charger.png" alt="volt charger">
                             <h2 class="rightHeader">What do I get?</h2>
-                            <p><i class="fas fa-check"></i>Swap it once a day  for a new fully charged one</p>
-                            <p><i class="fas fa-check"></i>No need to wait in line</p>
-                            <p><i class="fas fa-check"></i>Fits perfectly in your pocket</p>
-                            <p><i class="fas fa-check"></i>Refundable upon return</p>
+                            <p><i class="far fa-check-circle"></i></i> Swap it once a day  for a new fully charged one</p>
+                            <p><i class="far fa-check-circle"></i></i> No need to wait in line</p>
+                            <p><i class="far fa-check-circle"></i></i> Fits perfectly in your pocket</p>
+                            <p><i class="far fa-check-circle"></i></i> Refundable upon return</p>
 
                         </label>
         
@@ -178,28 +185,31 @@
     <!-- fieldset 3 : PAYMENT-->
          <fieldset data-field="fieldset3" id="fieldset3" class="hidden">
                 <div class="container">
-                    <label class="leftSideForm">
+                    <label class="leftSideForm leftSideFormGrid">
                             <h2 class="">Payment Information</h2>
                             <div id="allPayContainer">
                             <div class="payContainer"><img class="paymentImg" src="images/creaditcard-img.png" alt="credit card"></div>
                             <div class="payContainer"><img class="paymentImg" src="images/paypal-img.png" alt="paypal"></div>
                             <div class="payContainer"><img class="paymentImg" src="images/mobilepay-img.png" alt="paypal"></div>
                             </div>
-                            <label name="card_number">Card number:</label>
+                            <label name="card_number">Card number:
                             <br>
-                            <input type="number" name="cardnumber" placeholder="98654332">
+                            <input class="signUpInput" type="number" name="cardnumber" placeholder="98654332">
+                            </label>
                             <br>
-                            <label name="email">E-mail:</label>
+                            <label class="rightGrid" name="text">Card Holder
                             <br>
-                            <input type="text" name="cardholder" placeholder="Jonas Holbech">
-<br>
-                            <label name="expiry" >Expiry date:</label>
+                            <input class="signUpInput" type="text" name="cardholder" placeholder="Jonas Holbech">
+<br>                        </label>
+                            <label name="expiry" >Expiry date:
                             <br>
-                            <input type="number" name="expirydate" placeholder="02/2020">
+                            <input class="signUpInput" type="number" name="expirydate" placeholder="02/2020">
+                            </label>
                             <br>
-                            <label name="security code" >Security code:</label>
+                            <label name="security code" >Security code:
                             <br>
-                            <input type="number" name="securecode" placeholder="478">
+                            <input class="signUpInput" type="number" name="securecode" placeholder="478">
+                            </label>
                             <br>
 
                     <input type="button" id="goBackBtn2" data-field="goBackBtn2" name="goback" class="backActionBtn" value="Go Back" />
@@ -218,7 +228,7 @@
     <div class="container">
             <label class="leftSideForm">
                     <h2 class="">Thank you for purchasing our service.</h2>
-                    <h3 class="">Roskilde Festival is waiting for you!</h3>
+                    <h3 class="">See you at Roskilde Festival!</h3>
                    <button class="greenBtn" onclick="window.location.href='index.html'">Go back</button>
             </label>
 
